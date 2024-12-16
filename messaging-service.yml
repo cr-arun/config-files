@@ -2,4 +2,4 @@
 server:
   port: 7091
   servlet:
-    context-path: /music
+    context-path: /messaging
