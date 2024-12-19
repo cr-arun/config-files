@@ -11,7 +11,7 @@ keycloak:
   realm: spotify
   serverUrl: http://localhost:9081
   adminClientId: admin-cli
-  adminClientSecret: Sr2cryaesLrLsMO0vRNGEfgiwU8N9SKx
+  adminClientSecret: VBcbPmiylEY4XDq7SatEZN0kcSuI8xUv
   client: authenticationClientId
   urls:
     auth: https://${keycloak.domain}
