@@ -8,8 +8,8 @@ jwt:
     converter:
       resource-id: authenticationClientId
 keycloak:
-  realm: bisky-music
-  domain: keycloak.codewithbisky.com
+  realm: spotify
+  serverUrl: http://localhost:9081
   adminClientId: admin-cli
   adminClientSecret: Sr2cryaesLrLsMO0vRNGEfgiwU8N9SKx
   client: authenticationClientId
