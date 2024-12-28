@@ -9,6 +9,7 @@ jwt:
       resource-id: authenticationClientId
 keycloak:
   realm: spotify
+  domain: http://localhost:9081
   serverUrl: http://localhost:9081
   adminClientId: admin-cli
   adminClientSecret: VBcbPmiylEY4XDq7SatEZN0kcSuI8xUv
