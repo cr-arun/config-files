@@ -10,8 +10,16 @@ app:
   dbUsername: root
   dbPassword: root
   dbName: spotifyusers_db
+  keycloak:
+    realm: spotify
+    domain: http://localhost:9081
 
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://${app.keycloak.domain}/realms/${app.keycloak.realm}
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -31,3 +39,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
         storage_engine: innodb
+jwt:
+  auth:
+    converter:
+      resource-id: authenticationClientId
