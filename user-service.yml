@@ -3,3 +3,31 @@ server:
   port: 7092
   servlet:
     context-path: /user
+
+app:
+  dbHostName: localhost
+  dbPort: 3306
+  dbUsername: root
+  dbPassword: root
+  dbName: users_db
+
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${app.dbHostName}:${app.dbPort}/${app.dbName}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Europe/Rome&autoReconnect=true
+    username: ${app.dbUsername}
+    password: ${app.dbPassword}
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+        storage_engine: innodb
