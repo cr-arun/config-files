@@ -9,7 +9,7 @@ app:
   dbPort: 3306
   dbUsername: root
   dbPassword: root
-  dbName: users_db
+  dbName: spotifyusers_db
 
 spring:
 
