@@ -1,45 +1,29 @@
 
 server:
-  port: 7092
+  port: 7093
   servlet:
     context-path: /user
 
 app:
   dbHostName: localhost
   dbPort: 3306
-  dbUsername: root
+  dbUsername: postgres
   dbPassword: root
-  dbName: spotifyusers_db
-  keycloak:
-    realm: spotify
-    domain: http://localhost:9081
+  dbName: spotify
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://${app.keycloak.domain}/realms/${app.keycloak.realm}
-
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${app.dbHostName}:${app.dbPort}/${app.dbName}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Europe/Rome&autoReconnect=true
-    username: ${app.dbUsername}
-    password: ${app.dbPassword}
-    testWhileIdle: true
-    validationQuery: SELECT 1
+    url: jdbc:postgresql://localhost:5432/spotify
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
   jpa:
-    generate-ddl: true
-    show-sql: true
-    database: mysql
     hibernate:
       ddl-auto: update
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-        storage_engine: innodb
-jwt:
-  auth:
-    converter:
-      resource-id: authenticationClientId
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+# Optional logging configuration
+
