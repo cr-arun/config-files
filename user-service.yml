@@ -1,4 +1,3 @@
-
 server:
   port: 7093
   servlet:
@@ -6,7 +5,7 @@ server:
 
 app:
   dbHostName: localhost
-  dbPort: 3306
+  dbPort: 5432  # Ensure this is correct for PostgreSQL
   dbUsername: postgres
   dbPassword: root
   dbName: spotify
@@ -24,6 +23,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-
 # Optional logging configuration
-
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.jdbc: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"  # Custom console logging format
